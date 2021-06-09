@@ -5,20 +5,25 @@
 //should return "found the needle at position 5"
 
 
-const findNeedle = (haystack) => {
-    //iterate through the ARRAY
-    //compare if each element matches a STRING such as 'needle'
-    //grab the index if needle is found
-    //return the index of needle following the string 'found the needle at position {index}
-    position 
-    for (i = 0; i < haystack.length; i++){
+// const findNeedle = (haystack) => {
+//     //iterate through the ARRAY
+//     //compare if each element matches a STRING such as 'needle'
+//     //grab the index if needle is found
+//     //return the index of needle following the string 'found the needle at position {index}
+//     position 
+//     for (i = 0; i < haystack.length; i++){
         
-        if (haystack[i] === 'needle') {
-            position =i
-        }
-    }
-    console.log(position)
-    return `found the needle at position ${position}`
+//         if (haystack[i] === 'needle') {
+//             position =i
+//         }
+//     }
+//     console.log(position)
+//     return `found the needle at position ${position}`
+// }
+
+
+const findNeedle = (haystack) => {
+    return `found the needle at position ${haystack.indexOf('needle')}`
 }
 const haystack_1 = ['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false];
 const haystack_2 = ['283497238987234', 'a dog', 'a cat', 'some random junk', 'a piece of hay', 'needle', 'something somebody lost a while ago'];
