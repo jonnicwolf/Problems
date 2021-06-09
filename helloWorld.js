@@ -6,7 +6,7 @@ const helloWorld = () => {
     //separate off from the ',' after hello -> hello,
     //add a space after the comma 
     //return our string
-    const helloworldArr = Array.from(String.fromCharCode(72, 69, 76, 76, 79,  32, 87, 79, 82, 76, 68).toLowerCase())
+    const helloworldArr = Array.from(String.fromCharCode(72, 69, 76, 76, 79, 32, 87, 79, 82, 76, 68, 33).toLowerCase())
     for (let i = 0; i < helloworldArr.length; i++) {
         if (helloworldArr[i] === 'h') {
             helloworldArr[i]=helloworldArr[i].toUpperCase()
@@ -15,7 +15,7 @@ const helloWorld = () => {
             helloworldArr[i]=helloworldArr[i].toUpperCase()
         }
     }
-    
-    console.log(helloworldArr)
+    helloworldArr.splice(5,0,',')
+    return helloworldArr.join('')
 }
 console.log(helloWorld())
