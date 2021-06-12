@@ -11,7 +11,7 @@ const pattern = (n) => {
   for (let i = 1; i <= n; i++) {
     arr.push(i);
     if (arr.length > 1) {
-      arr.splice(arr[0], i);
+      arr.push(arr.slice(0, i-1).reverse())
     }
     console.log(arr);
   }
