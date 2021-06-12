@@ -7,3 +7,6 @@ const isIsogram = (str) => {
     return true;
   }
 };
+
+
+console.log('borbon')
