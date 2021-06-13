@@ -14,14 +14,10 @@ const pattern = (n) => {
   }
   for (let i = 1; i <= n; i++) {
     arr.push(i);
-    // if (n === 0) {
-    //   return ''
-    // }
+    
     if (arr.length > 1) {
-      result = arr.slice(0, i - 1).reverse()
-      // console.log(neuArr)
-        // arr.push(neuArr)
-      arr.concat(result)
+      result = arr.slice(0, i - 1).reverse()    
+      arr.concat(result).join('')
     }
   }
 };
