@@ -9,7 +9,7 @@ const pattern = (n) => {
   const arr = [];
   let result = []
   let outut 
-  if(n === 0){
+  if(n < 1){
     return ''
   }
   for (let i = 1; i <= n; i++) {
