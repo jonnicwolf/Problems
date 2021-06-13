@@ -8,21 +8,27 @@
 const pattern = (n) => {
   const arr = [];
   let result = []
-  let outut 
-  if(n < 1){
+  let output
+  let space = '\n'
+  if (n <= 0) {
     return ''
   }
   for (let i = 1; i <= n; i++) {
     arr.push(i);
 
-    if (arr.length > 1) {
+    
+    if (arr.length >= 1) {
+     
       result = arr.slice(0, i - 1).reverse()
       output = arr.concat(result).join('')
     }
+    
   }
   return output
 };
-console.log(pattern(0));
+console.log(pattern(5));
 
 // //arr = [1, 2, 3, 2, 1]
 
+let sentence = `yo yo \n yo yo`
+console.log(sentence)
