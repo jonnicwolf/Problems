@@ -6,24 +6,25 @@
 // Range of n is (-∞,100]
 
 const pattern = (n) => {
-    const arr = [];
+  const arr = [];
+  let result = []
     
 
   for (let i = 1; i <= n; i++) {
     arr.push(i);
-    if (arr.length > 1) {
-      let neuArr = arr.slice(0, i - 1).reverse()
-      console.log(neuArr)
+    if (n === 0) {
+      return ''
+    }
+    else if (arr.length > 1) {
+      result = arr.slice(0, i - 1).reverse()
+      // console.log(neuArr)
         // arr.push(neuArr)
-
-      arr.concat(neuArr)
-      console.log(arr)
-      // arr.flat()
-     console.log(arr)
+      arr.concat(result)
     }
     console.log(arr);
   }
-    console.log(arr);
+  console.log(arr);
+  console.log(result)
     return arr
 };
 console.log(pattern(5));
