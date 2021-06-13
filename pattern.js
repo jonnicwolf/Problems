@@ -9,23 +9,21 @@ const pattern = (n) => {
   const arr = [];
   let result = []
     
-
+  if(n == 0){
+    return ''
+  }
   for (let i = 1; i <= n; i++) {
     arr.push(i);
-    if (n === 0) {
-      return ''
-    }
-    else if (arr.length > 1) {
+    // if (n === 0) {
+    //   return ''
+    // }
+    if (arr.length > 1) {
       result = arr.slice(0, i - 1).reverse()
       // console.log(neuArr)
         // arr.push(neuArr)
       arr.concat(result)
     }
-    console.log(arr);
   }
-  console.log(arr);
-  console.log(result)
-    return arr
 };
 console.log(pattern(5));
 
