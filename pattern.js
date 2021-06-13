@@ -12,10 +12,14 @@ const pattern = (n) => {
   for (let i = 1; i <= n; i++) {
     arr.push(i);
     if (arr.length > 1) {
-        let neuArr = arr.slice(0, i - 1).reverse()
-        arr.push(neuArr)
-        console.log(typeof arr)
-        arr.flat()
+      let neuArr = arr.slice(0, i - 1).reverse()
+      console.log(neuArr)
+        // arr.push(neuArr)
+
+      arr.concat(neuArr)
+      console.log(arr)
+      // arr.flat()
+     console.log(arr)
     }
     console.log(arr);
   }
