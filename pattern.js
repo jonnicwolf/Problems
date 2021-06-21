@@ -56,24 +56,31 @@
 // //   return output
 // //}
 
-// const pattern = n => {
-//   var output = "";
-//   let base = []
-//   let addLine = []
+const pattern = n => {
+  var output = "";
+  let base = []
+  let addLine = []
   
-//   for (i = 0; i < n; i++) {
-//     if (i < 1) {
-//       base.push(1)
-//       result = (Number(base.join(''))) * (Number(base.join('')))
-//     addLine.push(result,'\n')
-//     }
-//     base.push(1)
-//     console.log(base)
-//     result = (Number(base.join(''))) * (Number(base.join('')))
-//     addLine.push(result, '\n')
-//     console.log(addLine)
-//   }
-//   output = addLine.join(' ')
-//   return output;
-// }
-// console.log(pattern(25))
+  for (i = 0; i < n; i++) {
+    if (i < 1) {
+      base.push(1)
+      result = (Number(base.join(''))) * (Number(base.join('')))      
+      addLine.push(result,'\n')      
+    } else if (i < 9){
+      base.push(1)
+      console.log(base)
+      result = (Number(base.join(''))) * (Number(base.join('')))
+      addLine.push(result, '\n')
+      console.log(addLine)
+    }
+    else {
+      
+    }
+
+
+  }
+  output = addLine.join(' ')
+  return output;
+}
+console.log(pattern(10))
+console.log(10/100)
