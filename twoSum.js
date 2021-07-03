@@ -9,14 +9,12 @@
 //   for (let i = 0; i < nums.length; i++) {
 //     for (let j = 0; j < nums.length; j++) {
 //       if (nums[i] + nums[j] === target) {
-//         console.log(nums[i], nums[j]);
 //         arr.push(nums[i], nums[j]);
 //       }
 //     }
 //   }
-//   console.log(arr)
 //   const result = Array.from(new Set(arr))
-//   console.log(result)
+
 //   let filter;
 //   let [i,j] = [0,0]
 //   while (i < result.length) {
@@ -26,21 +24,37 @@
 //   }
 //   return filter;
 // };
-// //input: [1,2,3] 5
-// //output: [2,3]
+//input: [1,2,3] 5
+//output: [2,3]
 
 // console.log(twoSum([1, 2, 3,4,5], 5));
 
+// const twoSum = function(nums, target) {
+//   const comp = {};
+//   for(let i=0; i<nums.length; i++){
+//       if(comp[nums[i] ]>=0){
+//           return [ comp[nums[i] ] , i]
+//       }
+//     comp[target - nums[i]] = i
+//   }
+// };
+// twoSum([3, 6], 9)
 
-const twoSum = function(nums, target) {
-  const comp = {};
-  for(let i=0; i<nums.length; i++){
-      if(comp[nums[i] ]>=0){
-          return [ comp[nums[i] ] , i]
-      }
-      comp[target-nums[i]] = i
+//given an array of int return two indices such that they add up to target
+const twoSum = (nums, target) => {
+  let output = []
+  for (let i = 0; i < nums.length; i++){
+    for (let j = 0; j < nums.length; j++){
+      console.log(nums[j], nums[i])
+      
+      nums[j] + nums[i] === target
+        ? output.push([nums[i], nums[j]])
+        : null
+    }
+    console.log(output)
   }
+  return output
 };
-twoSum([3, 6], 9)
-const check = (undefined < 0)
-console.log()
+
+const thru10 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(twoSum(thru10, 12));
