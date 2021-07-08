@@ -18,23 +18,63 @@
 
 // console.log(intToRoman())
 
-const intToRoman = num => {
-    const numerals = [1, 5, 10, 50, 100, 1000]
-    console.log(numerals[numerals.length - 1])
-    const numArr =
-        String(num)
-            .split('')
-            .reverse()
+// const intToRoman = num => {
+//     const numerals = [1, 5, 10, 50, 100, 1000]
+//     console.log(numerals[numerals.length - 1])
+//     const numArr =
+//         String(num)
+//             .split('')
+//             .reverse()
             
-    for (let i = 0; i < numArr.length; i++) {
-        numArr[i] = Number(numArr[i])
-        console.log(numArr[i])
-    }
+//     for (let i = 0; i < numArr.length; i++) {
+//         numArr[i] = Number(numArr[i])
+//         console.log(numArr[i])
+//     }
     
-    let result = []
-    for (let i = numerals.length - 1; i >= 0; i--) {
-        console.log(numerals[i])
+//     let result = []
+//     for (let i = numerals.length - 1; i >= 0; i--) {
+//         console.log(numerals[i])
+//     }
+//     return result
+// }
+
+
+const intToRoman = num => {
+    
+    const roman = {
+        1000: 'M',
+         900: 'CM',
+         500: 'D',
+         400: 'CD',
+         100: 'C',
+          90: 'XC',
+          50: 'L',
+          40: 'XL',
+          10: 'X',
+           9: 'IX',
+           5: 'V',
+           4: 'IV',
+           3: 'III',
+           2: 'II',
+           1: 'I',
     }
-    return result
+    const output = ''
+    const roman_as_num = Object.keys(roman)
+    const paramNum = [...String(num)]
+    console.log(paramNum)
+    console.log(roman_as_num)
+    // for (let i = intArray.length - 1; i >= 0; i--) {
+    //     console.log(intArray[i])
+    //     num % intArray[i] < 1
+    //         ? null
+    //         :
+            
+    // }
+        //divide by big numbers first
+        //dividing by any number bigger than num should have a floating point <1
+        //dividing by any number smaller than num should have a floating point >1
+
+    
 }
-console.log(intToRoman(100))
+
+console.log(intToRoman(150))
