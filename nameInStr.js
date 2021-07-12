@@ -1,45 +1,88 @@
 //A function passing two strings, searching for one (the name) within the other. ``function nameInStr(str, name){ return true || false }``
 
-
 //nameInStr("Across the rivers", "chris") -> true
-
-
 //nameInStr("Brown fox",'Bronx') -> false
 
 const nameInStr = (str, name) => {
-    const strArr = [...str.toLowerCase()]
-    const nameArr = [...name.toLowerCase()]    
-    const output = []   
-    let i = 0
-    for (let i = 0, len = nameArr.length; i < len; i++) {
-        if (strArr.indexOf(nameArr[i]))
-            output.push(strArr[strArr.indexOf(nameArr[i])])
-        strArr.splice(i-1, 1)
-        console.log(strArr)
-        console.log(output)
+  const strArr = [...str.toLowerCase()];
+  const nameArr = [...name.toLowerCase()];
+  const output = [];
+
+  for (let i = 0, len = nameArr.length; i < len; i++) {
+   
+    if (strArr.indexOf(nameArr[i]) >= 0) {
+        const iterator = strArr.indexOf(nameArr[i]);
+        
+        output.push(strArr[iterator]);
+        iterator !== 0
+            ? strArr.splice(0, iterator)
+            : strArr.splice(0, iterator+1)
+        
     }
-    console.log(output)
-    if (output.join('') === name.toLowerCase()) {
-        return true
-    }
-    else { return false }    
-}
+    console.log(strArr)
+  }
+  
+  return output.join("") === name.toLowerCase() ? true : false;
+};
+
+// console.log(nameInStr('brittany', 'Brittany'))
+console.log(nameInStr('mtathew',
+  'Matthew' ))
+// console.log(nameInStr('rtoalmeyb eomcweri  hrreazeeth yra ejdy ymydlrbrehnea erdaojra y snlabeebtrocr  laeyiraytewej  yoay',
+//   'Matthew' ))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(
+//   nameInStr(
+//     "n  rredxe  eawar m llraejja ktnxnaeryrh   oaeeuee ybrr iymymg  idjase yiienteoe nday i  h jeitvm rfsreraiiamattrcry  zel er  n  teh  d  y",
+//     "Brittany"
+//   )
+// );
 
 // console.log(nameInStr("Across the rivers", "chris"))
 // console.log(nameInStr("Brown fox", 'Bronx'))
-console.log([...'ya (j) ifa (o) uqfcbhomseam m mdxenjgzemraaihwt(l) fyka hj(e)ao ahl doaeaiye  ilerii ejj h otjtrwcih x a whatettecrletdea  aa'].indexOf('n'))
-
-console.log(nameInStr('ya j ifa o uqfcbhomseam m mdxenjgzemraaihwt l fyka hj e ao ahl doaeaiye  ilerii ejj h otjtrwcih x a whatettecrletdea  aa',
-'Jolene' ))
-// console.log(nameInStr('A crew that boards the ship', 'chris'))
+// console.log(nameInStr("A crew that boards the ship", "chris"));
 
 // for (let i = 0, len = nameArr.length - 1; i < len; i++) {
-//     strArr.indexOf(nameArr[i]) < strArr.indexOf(nameArr[i + 1])            
+//     strArr.indexOf(nameArr[i]) < strArr.indexOf(nameArr[i + 1])
 //         ? output.push(true)
 //         : output.push(false)
 // }
 // return output.every(elem=>elem===true)
 
+// if (strArr.indexOf(nameArr[i])) {
+//     output.push(strArr[strArr.indexOf(nameArr[i])])
+//     strArr.splice(
+//         strArr[strArr.indexOf(nameArr[i])]
+//         , 1)
+// }
 
 // const strArr = [...str]
 //     const nameArr = [...name]
