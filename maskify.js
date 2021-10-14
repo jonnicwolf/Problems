@@ -1,10 +1,16 @@
 //Your task is to write a function maskify, which changes all but the last four characters into '#'.
-const maskify = (cc) => {
-    mask = Array.from(cc)
-    let i
-    for (i = 0; i < mask.length-4; i++){
-        mask[i]='#'
+
+const maskify = (cc)=> {    
+    let mask = cc.split('')
+    for (let i = cc.length-5; i >= 0; i--){
+        i === ' '
+            ? mask[i] = ' '
+            : mask[i] = '#'
     }
     return mask.join('')
-}
-console.log(maskify('12348678909876'))
+  }
+  
+  console.log(maskify('1234412378944561'))
+  console.log(maskify("Skippy"))
+  console.log(maskify("Nananananananananananananananana Batman!"))
+
