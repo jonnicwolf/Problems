@@ -13,15 +13,15 @@ highAndLow("1 9 3 4 -5"); // return "9 -5"
 //convert each string to num using map
 //sort by size
 //return first index and last index in a string
-const highAndLow = (numbers)=> {        
-    const arr = numbers.split(' ').map(Number).sort((a,b)=>a-b)
-    return `${arr[arr.length-1]} ${arr[0]}`
-}
+// const highAndLow = (numbers)=> {        
+//     const arr = numbers.split(' ').map(Number).sort((a,b)=>a-b)
+//     return `${arr[arr.length-1]} ${arr[0]}`
+// }
 
-// function highAndLow(numbers){
-//     numbers = numbers.split(' ').map(Number);
-//     return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
-//   }
+function highAndLow(numbers){
+    numbers = numbers.split(' ').map(Number);
+    return `${Math.max.apply(0, numbers)} ${Math.min.apply(0, numbers)}`;
+  }
 
 // console.log(highAndLow("1 2 3 4 5") )
 // console.log(highAndLow("1 2 -3 4 5"))
