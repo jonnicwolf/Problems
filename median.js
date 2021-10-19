@@ -1,8 +1,8 @@
 function median(values) {
     values.sort((a,b)=> a-b)
     return (values.length % 2 === 0) 
-        ? ( values[values.length/2] 
-           +values[(values.length/2)+1]
+        ?  (values[values.length/2] 
+            +values[(values.length/2)+1]
           ) / 2
         : values[Math.floor(values.length/2)]
 }

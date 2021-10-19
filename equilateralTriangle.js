@@ -7,5 +7,3 @@ const equilateralTriangle = height => {
     }
 }
 console.log(equilateralTriangle(6))
-
-
