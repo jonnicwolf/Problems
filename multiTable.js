@@ -18,9 +18,9 @@ const multiTable = number => {
     let empStr = '';    
     for (let i = 1; i <= 10; i++){
         let result  = i * number;
-        empStr += `${i} * ${number} = ${result} \n`
+        empStr += `${i} * ${number} = ${result}\n`
     };
     return empStr;
 }
 
-console.log(multiTable(5))
+console.log(multiTable(1))
