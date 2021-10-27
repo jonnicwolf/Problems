@@ -10,7 +10,7 @@ const wordFrequencies = (paragraph) => {
       frequencies[word] = 1;
     }
   
-    return frequencies;z
+    return frequencies;
 }
   
  wordFrequencies("I went to the store, but the store was closed. Maybe the store will be open tomorrow. But I fear not.")

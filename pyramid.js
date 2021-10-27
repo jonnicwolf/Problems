@@ -12,19 +12,24 @@ Note: the subarrays should be filled with 1s
 //0 --> []
 //1 --> [[1]] <-- container.push()
 
+
+
+
+
+
 const pyramid = (n)=>{
     const container = [];
-    let arrayOf1s = []
-    let i = 0
+    let arrayOf1s = [];
+    let i = 0;
     do {
         if (i === 0){ null }
             else {
-            arrayOf1s = [...arrayOf1s,1]
-            container.push(arrayOf1s) }            
-        i++
+            arrayOf1s = [...arrayOf1s,1];
+            container.push(arrayOf1s) };           
+        i++;
     } while (i <= n);
-    return container
+    return container;
 };
-console.log(pyramid(12))
+console.log(pyramid(5))
 
 //damn this one took forever
