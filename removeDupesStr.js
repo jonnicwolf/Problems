@@ -4,7 +4,7 @@ const removeDupes = (str) => {
   //loop over the string
   //compare each elem to the others
   console.log(str);
-  const joined = str.split("").sort();
+  const joined = str.split(" ").sort();
 
   const mash = [];
   let i = 0;

@@ -1,28 +1,21 @@
-/*
-You are given a list of songs where the ith song has a duration of 
-time[i] seconds.
+/*Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+Example:
 
-Return the number of pairs of songs for which their total duration in 
-seconds is divisible by 60. Formally, we want the number of indices i
- j such that i < j with (time[i] + time[j]) % 60 == 0.
+Input: 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+Output: 'alpha beta gamma delta'
 */
 
-//input -> array of nums(time)
-//output -> num of valid pairs divisible by 60
-
-let numPairDivisibleBy60 = function(time){
-    let counter = 0;
-    let len = time.length-1;
-    do {
-        for(let i=len; i > 1; i--){
-            if(time[i] + time[i - 1] % 60 === 0){
-                counter++;
-            };
+function removeDuplicateWords (s) {
+    let obj = {};
+    const wordArray = s.split(' ');    
+    for (let i = 0; i < wordArray.length; i++){
+        if (!obj['wordArray[i]']){            
+            obj[wordArray[i]] = wordArray[i]
         };
-        time.pop();
-    } while (time.length > 0);
-    console.log(`counter: ${counter}`)
-    return counter;
-};
+    };
+    return Object.keys(obj).join(' ');
+}
 
-numPairDivisibleBy60([30,20,150,100,40]);
+
+
+console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'))
