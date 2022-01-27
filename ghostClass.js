@@ -10,7 +10,7 @@ class Ghost {
 
   console.log(ghost)
 
-
+,
 
 
 
