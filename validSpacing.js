@@ -8,15 +8,17 @@ and no leading or trailing spaces. Below are some examples of what the function 
  */
 
 function validSpacing(s){
-    return s.trim() === s ? true : false;
-}
+    const ends = s.trim() === s ? true : false;    
+    if (!ends){ return s.split(' '.includes(' ')) ? false: true}
+    else return ends;
+};
 
-// console.log(validSpacing('Hello world'))//    = true
-// console.log(validSpacing(' Hello world '))//   = false
-// console.log(validSpacing('Hello world  '))//  = false
-// console.log(validSpacing('Hello  world'))//   = false
-// console.log(validSpacing('Hello'))//          = true
-// console.log(validSpacing('Helloworld'))//     = true 
-// console.log(validSpacing('Helloworld '))//    = false
-// console.log(validSpacing(' '))/// = false
-// console.log(validSpacing(''))//// = true
+console.log(validSpacing('Hello world'))//    = true
+console.log(validSpacing(' Hello world '))//   = false
+console.log(validSpacing('Hello world  '))//  = false
+console.log(validSpacing('Hello  world'))//   = false
+console.log(validSpacing('Hello'))//          = true
+console.log(validSpacing('Helloworld'))//     = true 
+console.log(validSpacing('Helloworld '))//    = false
+console.log(validSpacing(' '))/// = false
+console.log(validSpacing(''))//// = true
