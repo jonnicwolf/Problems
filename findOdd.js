@@ -19,8 +19,9 @@ function findOdd(A){
             counter[int] = 1
         } else counter[int]++
     };
-    const counterValues = Object.values(counter)
-    const counterKeys = Object.keys(counter)
+
+    const counterValues = Object.values(counter);
+    const counterKeys = Object.keys(counter);
 
     for (i=0;i<counterValues.length;i++){        
         if (counterValues[i]%2!==0){
