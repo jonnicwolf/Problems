@@ -27,13 +27,10 @@ function sortMyString(S){
     
     for (let i = 0; i < S.length; i++){
         let spaceless = S.split(' ').join('')
-        console.log(spaceless)
-            if (i % 2 === 0){                
-                even.push(spaceless[i])
-            } else {                
-                odd.push(spaceless[i])}
+            if (i % 2 === 0){even.push(spaceless[i])
+            } 
+            else {odd.push(spaceless[i])};
         }        
-        console.log(even,)
     return `${even.join('')} ${odd.join('')}`
 }
 
