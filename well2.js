@@ -13,29 +13,17 @@ The solution should be case insensitive (ie good,
  */
 
 function well2(x){
-    let superX = []    
-    for (let arr of x){
-        console.log(arr)
-        console.log(superX.concat(arr))
-    }
-    console.log(superX)
-    superX.map((val)=>{val.toLowerCase()})
-    console.log(superX)
-    let counter = {}
+    let superX = x.flat().map((val)=> String(val).toLowerCase());
+    let counter = {};
     for (let val of superX){
         if (counter[val]){
             counter[val]++
         } else counter[val] = 1
-    }
-    if (counter.good <= 2){
-        return 'Publish!';
-    }
-    else if (counter.good > 2){
-        return "I smell a series!"
-    } else return 'Fail!'
+    };    
+    return counter.good <= 2 ? 'Publish!' : counter.good > 2 ? 'I smell a series!' : 'Fail!'
 }
 
 
-// console.log(well2([['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad']]));
-console.log(well2([['gOOd', 'bad', 'BAD', 'bad', 'bad'], ['bad', 'bAd', 'bad'], ['GOOD', 'bad', 'bad', 'bAd']]));
-// console.log(well2([['gOOd', 'bAd', 'BAD', 'bad', 'bad', 'GOOD'], ['bad'], ['gOOd', 'BAD']]));
+console.log(well2([['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad']]));//fail
+console.log(well2([['gOOd', 'bad', 'BAD', 'bad', 'bad'], ['bad', 'bAd', 'bad'], ['GOOD', 'bad', 'bad', 'bAd']]));//publish
+console.log(well2([['gOOd', 'bAd', 'BAD', 'bad', 'bad', 'GOOD'], ['bad'], ['gOOd', 'BAD']]));//i smell a series
