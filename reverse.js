@@ -4,21 +4,19 @@
 //edge : if x is over the signed 32-bit integer return 0
 
 const reverse = (x) => {
-  const result = [];
-//   const arr = [...String(x)];
-    const arr = String(x).split('')
-    
-  for (let i = arr.length - 1; i >= 0; i--) {
-    result.push(arr[i]);
-  }
-
-  if (result[result.length - 1] === "-") {
-    const minus = result.pop();
-    result.unshift(minus);
-  }
-  const output = Number(result.join(""));
-
-  return output > 2_147_483_647 || output < -2_147_483_647 ? 0 : output;
+  const result = [];  
+  if (typeof x !== 'string'){
+    x = String(x)  
+    for (let i = x.length-1; i > 0; i--){
+      result.push(x[i])
+    }
+    return result.join('')
+  } else {
+    for (let i = x.length-1; i > 0; i--){
+      result.push(x[i])
+    }
+    return result.join('')
+  };  
 };
 
 const over = 9646324351;
