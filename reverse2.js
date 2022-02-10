@@ -17,11 +17,11 @@ function reverse2(str){
     let result = arr.map((word, index)=>{
         console.log(word, index)
         if (index % 2 !== 0){
-            word = Array.from(word).reverse().join(' ')
+          return  word = Array.from(word).reverse().join('')
         }
-        else {word = word}
+        else {return word}
     })
-    console.log(result)    
+    return result.join(' ')
 }
 console.log(reverse2("Reverse this string, please!"))
 console.log(reverse2("I really don't like reversing strings!"))
