@@ -5,23 +5,17 @@
  */
 
 function reverse2(str){    
-    // let arrFromStr = str.split(' ');    
-    // for (let i = 0; i < arrFromStr.length; i++){
-    //     if (i % 2!==0){
-    //         arrFromStr[i]=Array.from(arrFromStr[i]).reverse().join('')
-    //     } else continue        
-    // }
-    // return arrFromStr.join(' ')
-
-    let arr = str.split(' ')
-    let result = arr.map((word, index)=>{
-        console.log(word, index)
-        if (index % 2 !== 0){
-          return  word = Array.from(word).reverse().join('')
-        }
-        else {return word}
-    })
-    return result.join(' ')
+    if (str !== ' ' && str !== false){
+        let arr = str.split(' ');
+        let result = arr.map((word, index)=>{        
+            if (index % 2 !== 0) {
+                return  word = Array.from(word).reverse().join('')
+            } else { return word };
+        });
+        return result.join(' ').trim();
+    }
+    else { return '' };    
 }
 console.log(reverse2("Reverse this string, please!"))
 console.log(reverse2("I really don't like reversing strings!"))
+console.log(reverse2(" "))
