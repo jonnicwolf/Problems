@@ -5,17 +5,13 @@
  */
 
 function reverse2(str){    
-    if (str !== ' ' && str !== false){
-        let arr = str.split(' ');
-        let result = arr.map((word, index)=>{        
-            if (index % 2 !== 0) {
-                return  word = Array.from(word).reverse().join('')
-            } else { return word };
-        });
-        return result.join(' ').trim();
-    }
-    else { return '' };    
-}
+    return str.split(' ').map((word,index)=>{
+        if (index % 2 !== 0){return Array.from(word).reverse().join('')}
+        else {return word}    
+    }).join(' ').trim()
+};
+      
+
 console.log(reverse2("Reverse this string, please!"))
 console.log(reverse2("I really don't like reversing strings!"))
 console.log(reverse2(" "))
