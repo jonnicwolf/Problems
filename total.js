@@ -12,14 +12,15 @@ function total(arr){
                 if(num % i === 0) return false;              
                 return num > 1;
           }        
-        let counter = 0;
+        // let counter = 0;
 
-        for(i=2;i<arr.length;i++){            
-            if(isPrime(i)){                
-                counter += arr[i]
-            };
-        };
-        return counter;
+        // for(i=2;i<arr.length;i++){            
+        //     if(isPrime(i)){                
+        //         counter += arr[i]
+        //     };
+        // };
+        // return counter;
+        return arr.reduce((pre,cur,indx)=> pre + isPrime(indx) * cur,0)
     };    
 };
 
