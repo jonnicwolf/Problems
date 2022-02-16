@@ -32,25 +32,37 @@ function toArray(str){
     // then add extra number at the end of new array ✅
 
     let range = str.split('') ;
-    let extraNum = [] ;
     if (range.includes(',')){
+        let extraNum = [] ;
         extraNum.push(range[range.length-1])
         range.length-=2
         for (let i = 0; i < range.length; i++){
             if (range[i]==="_") range.splice(i,1)                    
         }
-        console.log(range)
+        
         range = range.map(val=>Number(val))
-        console.log(range)
+        
         let result = []
         for (let i = range[0]; i <= range[range.length-1]; i++){            
             result.push(i)
         }
         return [...result,Number(extraNum)]
+    } else {
+        let result = []
+        for (let i = 0; i < range.length; i++){
+            if (range[i]==='_') range.splice(i,1)
+        }
+        range = range.map(val=> Number(val))        
+        for (let i = range[0]; i <= range[range.length-1]; i++){
+            result.push(i)
+        }
+        return result
     }
 }
-console.log(toRange([1,2,3,4,5,6,9]))
-console.log(toArray(toRange([1,2,3,4,5,6,9])))
+// console.log(toRange([1,2,3,4,5,6,9]))
+// console.log(toArray(toRange([1,2,3,4,5,6,9])))
+console.log(toRange([1,2,3,4,5]))
+console.log(toArray(toRange([1,2,3,4,5])))
 
 
 
