@@ -25,20 +25,30 @@ function toRange(arr){
 
 
 function toArray(str){
-    let rest;
-    if (str.includes(',')) {
-        rest = Array.from(str).pop()
-        str.length-=2
-        for (let i = 0; i < str.length-1; i++){
-            if (str[i]+1!==str[str.length-1]){
-                console.log(typeof str)
-                Array.from(str).splice(str[i+1],0,str[i]+1)
-                console.log(str)
-            }
+    // convert str to an array ✅
+    // figure out if its a pure range or not ✅
+    // separate the extra num if impure ✅
+    // then fill in the nums between the underscore ✅
+    // then add extra number at the end of new array ✅
+
+    let range = str.split('') ;
+    let extraNum = [] ;
+    if (range.includes(',')){
+        extraNum.push(range[range.length-1])
+        range.length-=2
+        for (let i = 0; i < range.length; i++){
+            if (range[i]==="_") range.splice(i,1)                    
         }
+        console.log(range)
+        range = range.map(val=>Number(val))
+        console.log(range)
+        let result = []
+        for (let i = range[0]; i <= range[range.length-1]; i++){            
+            result.push(i)
+        }
+        return [...result,Number(extraNum)]
     }
 }
-
 console.log(toRange([1,2,3,4,5,6,9]))
 console.log(toArray(toRange([1,2,3,4,5,6,9])))
 
