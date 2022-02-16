@@ -13,8 +13,28 @@ The number 6 would just be "6"
  */
 
 function toRange(arr){
-    return `${arr[0]}_${arr[arr.length-1]}`
+    //sort first ✅
+    let neuArr = arr.sort((a,b)=> a-b) ;    
+    let result;
+    for (let i = 0; i < neuArr.length-1; i++){                
+        if (neuArr[i+1]-neuArr[i]===1) result = `${neuArr[0]}_${neuArr[neuArr.length-1]}`
+        else result = `${neuArr[0]}_${neuArr[i]},${neuArr[neuArr.length-1]}`
+    }
+    return result;
 };
 
-console.log(toRange([1,2,3,4,5]))
+
+
+console.log(toRange([1,2,3,4,5,6,9]))
+
+
+
+
+
+
+
+
+
+
+
 
