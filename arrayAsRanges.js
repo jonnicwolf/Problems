@@ -24,8 +24,24 @@ function toRange(arr){
 };
 
 
+function toArray(str){
+    let rest;
+    if (str.includes(',')) {
+        rest = Array.from(str).pop()
+        str.length-=2
+        for (let i = 0; i < str.length-1; i++){
+            if (str[i]+1!==str[str.length-1]){
+                console.log(typeof str)
+                Array.from(str).splice(str[i+1],0,str[i]+1)
+                console.log(str)
+            }
+        }
+    }
+}
 
 console.log(toRange([1,2,3,4,5,6,9]))
+console.log(toArray(toRange([1,2,3,4,5,6,9])))
+
 
 
 
