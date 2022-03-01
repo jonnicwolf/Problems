@@ -12,8 +12,7 @@ The numbers 5, 6, 7, 8 and 9 would be displayed as "5_9"
 The number 6 would just be "6"
  */
 
-function toRange(arr){
-    //sort first ✅
+function toRange(arr){    
     let neuArr = arr.sort((a,b)=> a-b) ;    
     let result;
     for (let i = 0; i < neuArr.length-1; i++){                
@@ -34,33 +33,31 @@ function toArray(str){
     let range = str.split('') ;
     if (range.includes(',')){
         let extraNum = [] ;
-        extraNum.push(range[range.length-1])
-        range.length-=2
+        extraNum.push(range[range.length-1]);
+        range.length-=2;
         for (let i = 0; i < range.length; i++){
             if (range[i]==="_") range.splice(i,1)                    
-        }
-        
-        range = range.map(val=>Number(val))
-        
-        let result = []
+        };
+        range = range.map(val=>Number(val));
+        let result = [];
         for (let i = range[0]; i <= range[range.length-1]; i++){            
-            result.push(i)
-        }
-        return [...result,Number(extraNum)]
+            result.push(i);
+        };
+        return [...result,Number(extraNum)];
     } else {
-        let result = []
+        let result = [];
         for (let i = 0; i < range.length; i++){
-            if (range[i]==='_') range.splice(i,1)
-        }
-        range = range.map(val=> Number(val))        
+            if (range[i]==='_') range.splice(i,1);
+        };
+        range = range.map(val=> Number(val));
         for (let i = range[0]; i <= range[range.length-1]; i++){
-            result.push(i)
-        }
-        return result
-    }
-}
-// console.log(toRange([1,2,3,4,5,6,9]))
-// console.log(toArray(toRange([1,2,3,4,5,6,9])))
+            result.push(i);
+        };
+        return result;
+    };
+};
+console.log(toRange([1,2,3,4,5,6,9]))
+console.log(toArray(toRange([1,2,3,4,5,6,9])))
 console.log(toRange([1,2,3,4,5]))
 console.log(toArray(toRange([1,2,3,4,5])))
 
