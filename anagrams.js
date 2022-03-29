@@ -23,27 +23,14 @@ ALGORITHMSSTRINGS
  */
 
 
-function anagrams(word,words){
-    /**
-     * split word into letters and count each letter with an obj
-     * then loop over the array of words and count the letters of each word with an obj
-     * object.keys the obj
-    */
-
-    const wordByLetter = word.split('')
-    console.log(wordByLetter)
-
-    let wordByLetter_Count = {}
-    
-    for (let letter of wordByLetter){
-        wordByLetter_Count[letter] ? wordByLetter_Count[letter]++ : wordByLetter_Count[letter] = 1
+function anagrams(word,words){    
+    const wordSplit = word.split('').sort().join('')
+    console.log(wordSplit)
+    let result = [];
+    for (let item of words){
+        wordSplit === item.split('').sort().join('') ? result.push(item) : null;
     }
-    console.log(wordByLetter_Count)
-
-    
-
-
-
+    return result;
 }
 
 console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) )
