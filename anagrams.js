@@ -34,5 +34,5 @@ function anagrams(word,words){
 }
 
 console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) )
-// console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
-// console.log(anagrams('laser', ['lazing', 'lazy',  'lacer']) )
+console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
+console.log(anagrams('laser', ['lazing', 'lazy',  'lacer']) )
