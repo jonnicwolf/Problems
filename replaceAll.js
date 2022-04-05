@@ -34,7 +34,11 @@ function replaceAll(input, find, replace){
         result = result.replace(find,replace)
         console.log(result)
         
-        
+        console.log(result.includes(find))
+        result = result.replace(find, replace)
+        console.log(result.includes(find))
+        console.log(result)
+
         // do {
         //     result = result.replace(find, replace)
         // } while (result.includes(find));

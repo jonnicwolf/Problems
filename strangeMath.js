@@ -25,7 +25,12 @@ strangeMath(15, 15) === 7
  */
 
 function strangeMath (n,k){
-        
+   let result = []
+   for (i = 1;i <= n;i++) {
+      result.push(String(i).charCodeAt(0))   
+   }
+   result = result.sort((a,b)=> a-b)
+   console.log(result)
 }
 
 console.log(strangeMath(11, 2))

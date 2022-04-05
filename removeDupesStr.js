@@ -6,7 +6,8 @@ const removeDupes = (str) => {
   console.log(str);
   const joined = str.split(" ").sort();
 
-  const mash = [];
+  cons
+  t mash = [];
   let i = 0;
   while (i < joined.length) {
     if (joined[i].includes(" ")) {
