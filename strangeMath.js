@@ -51,18 +51,24 @@ strangeMath(15, 15) === 7
 // }
 
 
-function strangeMath(n,k){
-   let result = [];
-   for (let i = 1;i<=n;i++){
-      result.push(String(i).split('').map((num,i)=>num.charCodeAt(0)))
-   }
-   console.log(result.sort().map(num=>String.fromCharCode(num)))
+// function strangeMath(n,k){
+//    let result = [];
+//    for (let i = 1;i<=n;i++){
+//       result.push(String(i).split('').map((num,i)=>num.charCodeAt(0)))
+//    }
+//    console.log(result.sort().map(num=>String.fromCharCode(num)))
+// }
 
-   
-      
+function strangeMath(n,k){
+   let stringsOfNums = [];
+   for (let i=1;i<=n;i++){
+      stringsOfNums.push(String(i))
+   }   
+   stringsOfNums.sort()
+   return stringsOfNums.indexOf(String(k))
 }
 
 console.log(strangeMath(11, 2));
-// console.log(strangeMath(15, 5));
-// console.log(strangeMath(15, 15));
-// console.log(strangeMath(39298, 20735));
+console.log(strangeMath(15, 5));
+console.log(strangeMath(15, 15));
+console.log(strangeMath(39298, 20735));
