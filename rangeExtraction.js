@@ -18,13 +18,11 @@ function rangeExtraction(list){
     
     let result = []
     for(let i=0;i<list.length-1;i++){
-        if (list[i]===1) {continue}
+        // if (list[i]===1) {continue}
         if (list[i]+1===list[i+1]){//if current is equal to 
             console.log(list[i])
            test.push(true)
            currentRange.push(list[i])
-     
-            
         }
         else {
             if (currentRange[currentRange.length-1] <= list[i+1]-1){
