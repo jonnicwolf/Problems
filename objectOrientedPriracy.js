@@ -28,11 +28,15 @@ titanic.isWorthIt() // return false
 function Ship(draft,crew){
     this.draft = draft;
     this.crew = crew;
-    this.isWorthIt = ()=> draft > 20 ? true : draft-(1.5*crew) > 20 
+    this.isWorthIt = ()=>  draft-(1.5*crew) >= 20 
 }
 
 let titanic = new Ship (15,10)
 let emptyShip = new Ship(0,0)
+let crewlessShip = new Ship(20,0)
+let brokeAssShip = new Ship(0,20)
 
 console.log(titanic.isWorthIt())
 console.log(emptyShip.isWorthIt())
+console.log(crewlessShip.isWorthIt())
+console.log(brokeAssShip.isWorthIt())
