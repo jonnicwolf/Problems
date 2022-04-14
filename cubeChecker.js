@@ -19,11 +19,7 @@ Note: the sides must be integers
 // }
 
 function cubeChecker(volume,side){
-    if (side < 1){
-        return false;
-    }
-    return Math.pow(side, 3) === volume
-
+    return side < 1 ? false : Math.pow(side,3)===volume
 }
 
 console.log(cubeChecker(56.3, 1))//, false);
