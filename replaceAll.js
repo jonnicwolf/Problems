@@ -13,51 +13,75 @@ As with the original "string".replace(find, replace), if find is an empty string
      I've given you some tests for this to make it a little clearer.
  */
 
-function replaceAll(input, find, replace){
+// function replaceAll(input, find, replace){
     
-    if (input === ''){ //if input is empty, go in between
-        let inputToArr = input.split(' '); 
-        inputToArr = inputToArr.map(word=> word.replace(find,replace));      
-        return inputToArr
-    }
-    if (input.split(' ').length === 1){
+//     if (input === ''){ //if input is empty, go in between
+//         let inputToArr = input.split(' '); 
+//         inputToArr = inputToArr.map(word=> word.replace(find,replace));      
+//         return inputToArr
+//     }
+//     if (input.split(' ').length === 1){
         
-        //check that the one element contains find
-        // inputToArr = String(inputToArr)
-        // inputToArr = String(inputToArr).split('').join(' ').split('')
-        // inputToArr.push(replace);
-        // inputToArr.unshift(replace);
-        // inputToArr = inputToArr.map((word)=> { if (find === '') return word.replace(' ', replace)} );
+//         //check that the one element contains find
+//         // inputToArr = String(inputToArr)
+//         // inputToArr = String(inputToArr).split('').join(' ').split('')
+//         // inputToArr.push(replace);
+//         // inputToArr.unshift(replace);
+//         // inputToArr = inputToArr.map((word)=> { if (find === '') return word.replace(' ', replace)} );
         
-        let result = input
-        console.log(result)
-        result = result.replace(find,replace)
-        console.log(result)
+//         let result = input
+//         console.log(result)
+//         result = result.replace(find,replace)
+//         console.log(result)
         
-        console.log(result.includes(find))
-        result = result.replace(find, replace)
-        console.log(result.includes(find))
-        console.log(result)
+//         console.log(result.includes(find))
+//         result = result.replace(find, replace)
+//         console.log(result.includes(find))
+//         console.log(result)
 
-        // do {
-        //     result = result.replace(find, replace)
-        // } while (result.includes(find));
-        // console.log(result)
-        // return result;
+//         // do {
+//         //     result = result.replace(find, replace)
+//         // } while (result.includes(find));
+//         // console.log(result)
+//         // return result;
 
-    } 
+//     } 
     
-    else {              
-        let inputToArr = input.split(' '); //works
-        inputToArr = inputToArr.map(word => word.replace(find,replace));
-        return inputToArr.join(' ');
-    }        
-};
+//     else {              
+//         let inputToArr = input.split(' '); //works
+//         inputToArr = inputToArr.map(word => word.replace(find,replace));
+//         return inputToArr.join(' ');
+//     }        
+// };
 
 // console.log(replaceAll("", "", "-"))//, "-", "Empty input, empty find");
 // console.log(replaceAll("1", "", "-"))//, "-1-", "Single-character input, empty find");
  
-// console.log(replaceAll('Darien Matthew Morales Darien', 'Darien', "Monkey"))
-// console.log(replaceAll("string-string", "ing", "!"))
 
-console.log(replaceAll("123", "", "-"))
+
+
+function replaceAll (input,find,replace){
+    //break input into words
+    let arrayOfWords = input.split(' ')
+    let result = ''
+    console.log(arrayOfWords)
+    if (arrayOfWords.length > 1){
+        for (let i=0;i< arrayOfWords.length;i++){
+            if (arrayOfWords[i]===find){
+                arrayOfWords[i]=replace;
+            }         
+        }        
+        for (let i=0;i<=arrayOfWords.length-1;i++){
+            result += (arrayOfWords[i] + ' ')
+        }
+    }
+    else {
+        
+    }
+    console.log(result)
+    return result
+}
+
+// replaceAll('Darien Matthew Morales Darien', 'Darien', "Monkey")
+console.log(replaceAll("string-string", "ing", "!"))
+// console.log(replaceAll("123", "", "-"))//-> -1-2-3-

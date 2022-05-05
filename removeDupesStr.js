@@ -1,24 +1,32 @@
 //a function that takes in a string and returns the same string with all duplicates removed.
 
-const removeDupes = (str) => {
-  //loop over the string
-  //compare each elem to the others
-  console.log(str);
-  const joined = str.split(" ").sort();
+// const removeDupes = (str) => {
 
-  cons
-  t mash = [];
-  let i = 0;
-  while (i < joined.length) {
-    if (joined[i].includes(" ")) {
-      mash.push(joined[i]);
-      console.log(joined);
+  
+// };
+
+// console.log(removeDupes("the quick brown fox jumped over the lazy dog"));
+// //input: the quick brown fox jumped over the lazy dog
+// //output: thequickbrownfxjumpdvzyg
+
+
+class Ghost {
+  constructor(colors){
+    this.colors= colors;
+    this.color= function(){ return colors[Math.floor(Math.random()*colors.length-1)+1]} ;
     }
-    i++;
   }
-  return joined;
-};
+  
+//   const colors = ['white','yellow','purple','red']
+//   const RNG = Math.floor(Math.random() * colors.length-1)+1
+  
+  ghost = new Ghost(['white','yellow','purple','red'])
 
-console.log(removeDupes("the quick brown fox jumped over the lazy dog"));
-//input: the quick brown fox jumped over the lazy dog
-//output: thequickbrownfxjumpdvzyg
+  console.log(ghost.color)
+
+  const colors = ['white','yellow','purple','red']
+  function color(colours){
+    return colors[Math.floor(Math.random()*colors.length-1)+1]
+  }
+
+  console.log(color())
