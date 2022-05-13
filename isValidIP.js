@@ -25,7 +25,7 @@ function isValidIP (str){
         if (arrayOfOctetsAndDots[i]!=='.'){
             octetStack.push(arrayOfOctetsAndDots[i]);    
             if (Number(octetStack.join(''))>255 || Number(octetStack.join(''))<0) return false;
-            if (octetStack[0]==='0') return false;
+            if (octetStack.length===2 && octetStack[0]==='0') return false;
             if (arrayOfOctets.length>=3 && octetStack.length===3) arrayOfOctets.push(octetStack.join(''));
         }
         else if (arrayOfOctetsAndDots[i]==='.') {
@@ -38,7 +38,7 @@ function isValidIP (str){
     };    
     return true;
 };
-console.log(isValidIP('0.0.0.0'))
+// console.log(isValidIP('0.0.0.0'))
 // console.log(isValidIP('1.2.3.4'))
 // console.log(isValidIP('123.45.67.89'))
 // console.log(isValidIP('1.2.3.4.5'))
