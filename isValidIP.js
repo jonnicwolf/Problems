@@ -17,18 +17,31 @@ Leading zeros (e.g. 01.02.03.04) are considered invalid
 Inputs are guaranteed to be a single string
  */
 
-const one = '1'
-const numChange = Number('1')
-
 function isValidIP (str){
-    const array = str.split('').forEach((val, index)=> {
-        if (idx % 2 !== 0){
-            
+    const arrayOfOctetsAndDots = str.split('');
+    let octetStack = [];
+    let arrayOfOctets = [];
+    for (let i = 0; i < arrayOfOctetsAndDots.length; i++){        
+        if (arrayOfOctetsAndDots[i]!=='.'){
+            octetStack.push(arrayOfOctetsAndDots[i]);    
+            if (Number(octetStack.join(''))>255 || Number(octetStack.join(''))<0) return false;
+            if (octetStack[0]==='0') return false;
+            if (arrayOfOctets.length>=3 && octetStack.length===3) arrayOfOctets.push(octetStack.join(''));
         }
-    })
+        else if (arrayOfOctetsAndDots[i]==='.') {
+            arrayOfOctets.push(octetStack.join(''));
+            octetStack.length = 0;
+        };        
+    };    
+    if (arrayOfOctets.length===4){
+        return false;
+    };    
+    return true;
+};
+console.log(isValidIP('0.0.0.0'))
+// console.log(isValidIP('1.2.3.4'))
+// console.log(isValidIP('123.45.67.89'))
+// console.log(isValidIP('1.2.3.4.5'))
+// console.log(isValidIP('123.456.78.90'))
+// console.log(isValidIP('123.045.067.089'))
 
-    
-}
-
-const [input1, input2, input3] = ['1.2.3.4','123.45.67.89','123.045.067.089']
-console.log(isValidIP(input1))
