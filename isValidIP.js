@@ -41,6 +41,7 @@ Inputs are guaranteed to be a single string
 //     };    
 //     return (dotCount===3 && arrayOfSegments.length===4) ? true : false;
 // };
+
 function isValidIP (str){
     const octets = str.split('.');
     return octets.length===4 && octets.every(octet=> Number(octet)<256 && String(Number(octet))===octet);
