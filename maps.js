@@ -9,7 +9,4 @@ function maps(x){
         result.push(element*2)
     };
     return result;
-}
-
-const test = [1,2,3,4,5]
-console.log(maps(test))
+};
