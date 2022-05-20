@@ -1,16 +1,17 @@
 class Ghost {
-    color;
+  // your code goes here
+  constructor(colors){
+    this.colors = colors;
   }
-  
-  const colors = ['white','yellow','purple','red']
-  const RNG = Math.floor(Math.random() * colors.length-1)+1
-  
-  ghost = new Ghost()
-  ghost.color = colors[RNG]
+  get color() {return this.rngColor()};
+  rngColor(){ return colors[Math.random(Math.floor*colors.length-1)+1] };
+};
 
-  console.log(ghost)
+let colors = ['white','yellow','purple','red'];
+let ghost = new Ghost(colors);
 
-,
+console.log(ghost.color)
+
 
 
 
