@@ -13,9 +13,8 @@ Note: base is a non-negative number, factor is a positive number. */
 
 function checkForFactor (base, factor){
     return base % factor === 0 ? true : false;
-}
+};
 
-console.log()
 console.log(checkForFactor(10,2))
 console.log(checkForFactor(63,7))
 console.log(checkForFactor(2450,5))
