@@ -24,3 +24,4 @@ function weatherInfo (temp) {
 }
 
 console.log(weatherInfo(56))
+
