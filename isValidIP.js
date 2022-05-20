@@ -43,9 +43,10 @@ Inputs are guaranteed to be a single string
 // };
 
 function isValidIP (str){
-    const octets = str.split('.');
+    const octets = str.split('.');    
     return octets.length===4 && octets.every(octet=> Number(octet)<256 && String(Number(octet))===octet);
 };
+
 // console.log(isValidIP('49.189..211')) //false
 // console.log(isValidIP('245..7.47')) //false
 // console.log(isValidIP('105..129.134')) //false
@@ -54,7 +55,7 @@ function isValidIP (str){
 // console.log(isValidIP('50.88.33.')) //false
 // console.log(isValidIP('62.106.74.')) //false
 // console.log(isValidIP('137.255.156.100')) //true
-// console.log(isValidIP('1.2.3.4')) //true
+console.log(isValidIP('1.2.3.4')) //true
 // console.log(isValidIP('0.0.0.0')) //true
 // console.log(isValidIP('123.45.67.89')) //true
 // console.log(isValidIP('1.2.3.4.5')) //false
