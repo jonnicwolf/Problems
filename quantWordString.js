@@ -25,13 +25,28 @@ function quantWordString (array){
     let result = '';
     for (let i=0; i<array.length; i++){
       if (i===array.length-1  && array.length>1){
-        result = result.concat(` and ${array[i].quantity} ${array[i].word}`)
+        if (array[i].quantity > 1 && !array[i].word.endsWith('s')){
+            result = result.concat(` and ${array[i].quantity} ${array[i].word}s`)    
+        }
+        else {
+            result = result.concat(` and ${array[i].quantity} ${array[i].word}`)
+        }
       }
       else if (array.length===2){
-        result = result.concat(`${array[i].quantity} ${array[i].word}`)      
+        if (array[i].quantity > 1 && !array[i].word.endsWith('s')){
+            result = result.concat(` and ${array[i].quantity} ${array[i].word}s`)    
+        }
+        else{
+            result = result.concat(`${array[i].quantity} ${array[i].word}`)
+        }
       }
       else {
-        result = result.concat(` ${array[i].quantity} ${array[i].word},`)      
+        if (array[i].quantity > 1 && !array[i].word.endsWith('s')){
+            result = result.concat(` and ${array[i].quantity} ${array[i].word}s`)    
+        }
+        else{
+            result = result.concat(` ${array[i].quantity} ${array[i].word},`)
+        }
       }
     }    
     return array.length>1 ? result : result.substring(0,result.length-1);
@@ -58,7 +73,7 @@ function quantWordString (array){
   console.log(quantWordString(test))//✅
   console.log(quantWordString(test2))//✅
   console.log(quantWordString(test3))
-  console.log(quantWordString(test4))
+  
 
   
   

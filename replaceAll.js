@@ -60,28 +60,80 @@ As with the original "string".replace(find, replace), if find is an empty string
 
 
 
-function replaceAll (input,find,replace){
-    //break input into words
-    let arrayOfWords = input.split(' ')
-    let result = ''
-    console.log(arrayOfWords)
-    if (arrayOfWords.length > 1){
-        for (let i=0;i< arrayOfWords.length;i++){
-            if (arrayOfWords[i]===find){
-                arrayOfWords[i]=replace;
-            }         
-        }        
-        for (let i=0;i<=arrayOfWords.length-1;i++){
-            result += (arrayOfWords[i] + ' ')
+// function replaceAll (input,find,replace){
+//     //break input into words
+//     let arrayOfWords = input.split(' ')
+//     let result = ''
+//     console.log(arrayOfWords)
+//     if (arrayOfWords.length > 1){
+//         for (let i=0;i< arrayOfWords.length;i++){
+//             if (arrayOfWords[i]===find){
+//                 arrayOfWords[i]=replace;
+//             }         
+//         }        
+//         for (let i=0;i<=arrayOfWords.length-1;i++){
+//             result += (arrayOfWords[i] + ' ')
+//         }
+//     }
+//     else {
+        
+//     }
+//     console.log(result)
+//     return result
+// }
+ function replaceAll(input,find,replace) {
+    const inputArray = input.split(' ')
+    
+    console.log(inputArray)
+
+    let resultStack = []
+    if (inputArray.length>1){
+        for (let element of inputArray){
+            if (element===find){
+                element=replace
+            }
+            else if
         }
     }
-    else {
+    if (inputArray===1){
+        let singleWordStack = input.split('')
+        let finderStack = []
+        let shifter = 0
+        for (let element of singleWordStack){``
+            
+            if (element!==find[shifter]){
+                //if index is not equal to the current scope of shifter. move to result and shorten single word
+                resultStack.push(element)
+                singleWordStack.shift()
+            }
+            else {
+                finderStack.push(element)
+                singleWordStack.shift()
+                shifter++
+            }
+            if (finderStack.join('')===find){
+                resultStack.push(...replace)
+            }
+        }
         
     }
-    console.log(result)
-    return result
-}
+    // else {
+    //     let singleWordArray = input.split('')
+    //     console.log(singleWordArray)
+    //     for (let element of singleWordArray){
+    //         if (element===singleWordArray){
+    //             finderStack.push(element)
+    //         }
+    //         else if (finderStack.length>find.length && finderStack.join('')!==find){
+    //             finderStack.length=0
+    //         }
+    //     }
+    // }
+   
 
-// replaceAll('Darien Matthew Morales Darien', 'Darien', "Monkey")
+ }
+
+
+console.log(replaceAll('Darien Matthew Morales Darien', 'Darien', "Monkey"))
 console.log(replaceAll("string-string", "ing", "!"))
 // console.log(replaceAll("123", "", "-"))//-> -1-2-3-
