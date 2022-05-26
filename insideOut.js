@@ -8,26 +8,20 @@ An example should clarify:
 
 'taxi' would become 'atix' 'taxis' would become 'atxsi' */
 
-function insideOut(x) {
-    let [frontStack,backStack] = [[],[]]
-    let middle = null;
-    if (x.length%2===0) {
-        for (let i=0,j=x.length-1; i<(x.length/2) && j>(x.length/2)-1; i++,j--){
-            frontStack.unshift(x[i]);
-            backStack.push(x[j]);
+function insideOut(x){
+    const xToArray = x.split(' ');
+    let result = xToArray.map((item)=>{
+        if (item.length>3 && item.length%2===1){            
+            return item.substring(0,item.length/2).split('').reverse()
+                .concat(item.charAt([item.length/2]),item.substring(item.length/2+1,item.length).split('').reverse()).join('');
         }
-        return frontStack.join('').concat(backStack.join(''));
-    }
-    else {
-        middle = (x.length-1)/2;
-        let xClone = x.split('');
-        let x_middleRemoved = xClone.splice(middle,1);
-        for (let i=0,j=xClone.length-1; i<(xClone.length/2) && j>(xClone.length/2)-1; i++,j--){
-            frontStack.unshift(xClone[i]);
-            backStack.push(xClone[j]);
+        else if (item.length>3 && item.length%2===0){
+            return item.substring(0,item.length/2).split('').reverse()
+                .concat(item.substring(item.length/2,item.length).split('').reverse()).join('');
         }
-        return frontStack.join('').concat(x_middleRemoved,backStack.join(''));
-    };
+        else return item;
+    });
+    return result.join(' ');
 };
 console.log(insideOut('taxi'))
 console.log(insideOut('taxis'))
