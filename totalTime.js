@@ -34,56 +34,56 @@ totalTime(['24:00:00','24:00:00','07']); // --> '2 days, 7 seconds
  */
 
 function totalTime (arr) {
-    let result = arr.map(time=>{
-        return time.split(':')
-    })
-    console.log(result)
+    let result = arr.map(time=>time.split(':'))
     let [dayStack,hourStack,minuteStack,secondStack]=[[],[],[],[]]
     let [days,hours,minutes,seconds]=[null,null,null]
     for (let i=0; i<result.length; i++){
         for(let j=result[i].length-1; j>=0; j--){
             if (j===result[i].length-1){
                 secondStack.push(result[i][j])
+                console.log(result[i][j])
             }
             else if (j===result[i].length-2){
                 minuteStack.push(result[i][j])
+                console.log(result[i][j])
             }
             else if (j===result[i].length-3){
                 hourStack.push(result[i][j])
+                console.log(result[i][j])
             }
         }
         seconds = secondStack.reduce((cur,pre)=>Number(cur)+Number(pre))
         minutes = minuteStack.reduce((cur,pre)=>Number(cur)+Number(pre))
-        if (seconds/60 >1){
-            seconds-=60
-            console.log(seconds)
-            minutes++
-        } else if (minutes/60 >1){
-            minutes-=60
-            hours++
-        } else if (hours/24 >1){
+        hours = hourStack.reduce((cur,pre)=>Number(cur)+Number(pre))
+        
+        if (seconds===60){
+            seconds = 0
+            minutes++            
+        } 
+        else if (minutes===60){
+            minutes = 0
+            hours++            
+        }         
+        else if (hours===24){            
+            console.log(hours)
+            hours = 0
             days++
         }
-
     }
-    console.log(minutes)
-    console.log(seconds)
-    console.log(hours)
-    if (days>1){
-        return `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
-    } else if (hours){
-        return `${hours} hours, ${minutes} minutes, ${seconds} seconds`
-    }
-    else if (minutes){
-        if (minutes > 1){
-            return `${minutes} minutes, ${seconds} seconds`
-        }
-        else return `${minutes} minute, ${seconds} seconds`
-        
-    }
+    let dayOrDays = days && days>1 ? `${days} days` : `${days} day`
+    let hoursOrHours = hours && hours>1 ? `${hours} hours` : `${hours} hour`
+    let minutesOrMinutes = minutes && minutes>1 ? `${minutes} minutes` : `${minutes} minute`
+    let secondOrSeconds = seconds && seconds>1 ? `${seconds} seconds` : `${seconds} second`   
+    
+    let finalString = []
+    if (days) finalString.push(dayOrDays)
+    if (hours) finalString.push(hoursOrHours)
+    if (minutes) finalString.push(minutesOrMinutes)
+    if (seconds) finalString.push(secondOrSeconds)
+    return finalString.join(' ')
 }
 // console.log(totalTime(['01:20','03:10']));    // --> '4 minutes, 30 seconds'
-console.log(totalTime(['00:50','00:30']));    // --> '1 minute, 20 seconds'
+// console.log(totalTime(['00:50','00:30']));    // --> '1 minute, 20 seconds'
 // console.log(totalTime(['01:20:00','40:00'])); // --> '2 hours'
 // console.log(totalTime(['12:00:00','10:00:00','02:00:00'])); // --> '1 day'
-// console.log(totalTime(['24:00:00','24:00:00','07'])); // --> '2 days, 7 seconds
+console.log(totalTime(['24:00:00','24:00:00','07'])); // --> '2 days, 7 seconds
