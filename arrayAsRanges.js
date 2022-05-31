@@ -34,24 +34,30 @@ function toRange (arr){
 }
 
 function toArray(str){    
-    console.log(str.split(','))
+    let outlierSplit = str.split(',')
     let strArray = str.split('')
     let range = []
+    let outliers = []
     let result = []
     for (let i=0;i<strArray.length;i++){
         if (strArray[i]==='_'){
-            range.push(strArray[i-1],strArray[i+1])
+            range.push(Number(strArray[i-1]),Number(strArray[i+1]))
         }        
     }
     for (let i=range[0]; i<=range[1];i++){
         result.push(i)
     }
-    
+    for (let i=0;i<outlierSplit.length;i++){
+        if (!outlierSplit[i].includes('_')){
+            result.push(Number(outlierSplit[i]))
+        }     
+    }
+    return result    
 }
-// console.log(toRange([1,2,3,4,5,6,9]))
+console.log(toRange([1,2,3,4,5,6,9]))
 console.log(toArray(toRange([1,2,3,4,5,6,9])))
-// console.log(toRange([1,2,3,4,5]))
-// console.log(toArray(toRange([1,2,3,4,5])))
+console.log(toRange([1,2,3,4,5]))
+console.log(toArray(toRange([1,2,3,4,5])))
 
 
 
