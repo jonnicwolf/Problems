@@ -23,43 +23,66 @@ function toRange(arr){
 };
 
 
-function toArray(str){
-    // convert str to an array ✅
-    // figure out if its a pure range or not ✅
-    // separate the extra num if impure ✅
-    // then fill in the nums between the underscore ✅
-    // then add extra number at the end of new array ✅
+// function toArray(str){
+//     // convert str to an array ✅
+//     // figure out if its a pure range or not ✅
+//     // separate the extra num if impure ✅
+//     // then fill in the nums between the underscore ✅
+//     // then add extra number at the end of new array ✅
 
-    let range = str.split('') ;
-    if (range.includes(',')){
-        let extraNum = [] ;
-        extraNum.push(range[range.length-1]);
-        range.length-=2;
-        for (let i = 0; i < range.length; i++){
-            if (range[i]==="_") range.splice(i,1)                    
-        };
-        range = range.map(val=>Number(val));
-        let result = [];
-        for (let i = range[0]; i <= range[range.length-1]; i++){            
-            result.push(i);
-        };
-        return [...result,Number(extraNum)];
-    } else {
-        let result = [];
-        for (let i = 0; i < range.length; i++){
-            if (range[i]==='_') range.splice(i,1);
-        };
-        range = range.map(val=> Number(val));
-        for (let i = range[0]; i <= range[range.length-1]; i++){
-            result.push(i);
-        };
-        return result;
-    };
-};
+//     let range = str.split('') ;
+//     if (range.includes(',')){
+//         let extraNum = [] ;
+//         extraNum.push(range[range.length-1]);
+//         range.length-=2;
+//         for (let i = 0; i < range.length; i++){
+//             if (range[i]==="_") range.splice(i,1)                    
+//         };
+//         range = range.map(val=>Number(val));
+//         let result = [];
+//         for (let i = range[0]; i <= range[range.length-1]; i++){            
+//             result.push(i);
+//         };
+//         return [...result,Number(extraNum)];
+//     } else {
+//         let result = [];
+//         for (let i = 0; i < range.length; i++){
+//             if (range[i]==='_') range.splice(i,1);
+//         };
+//         range = range.map(val=> Number(val));
+//         for (let i = range[0]; i <= range[range.length-1]; i++){
+//             result.push(i);
+//         };
+//         return result;
+//     };
+// };
+
+function toRange (arr){
+    let numberStack = []
+    let range = [];
+    for (let i=0; i<arr.length; i++){                
+        if (arr[i+1]-1===arr[i]){            
+            numberStack.push(arr[i])            
+        }        
+        else if (arr[i+1]-1!==arr[i] && arr[i-1]+1===arr[i]){
+            numberStack.push(arr[i])
+        }
+        else {
+            range.push(`${numberStack[0]}_${numberStack[numberStack.length-1]}`)            
+            numberStack.length = 0
+            range.push(`,${arr[i]}`)            
+        }        
+    }
+    return range.join('')
+}
+
+// function toArray(str){
+
+// }
 console.log(toRange([1,2,3,4,5,6,9]))
-console.log(toArray(toRange([1,2,3,4,5,6,9])))
-console.log(toRange([1,2,3,4,5]))
-console.log(toArray(toRange([1,2,3,4,5])))
+// console.log(toArray(toRange([1,2,3,4,5,6,9])))
+// console.log(toRange([1,2,3,4,5]))
+// console.log(toArray(toRange([1,2,3,4,5])))
 
 
 
