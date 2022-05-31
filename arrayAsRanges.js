@@ -62,10 +62,13 @@ function toRange (arr){
     let range = [];
     for (let i=0; i<arr.length; i++){                
         if (arr[i+1]-1===arr[i]){            
-            numberStack.push(arr[i])            
+            numberStack.push(arr[i])                        
         }        
         else if (arr[i+1]-1!==arr[i] && arr[i-1]+1===arr[i]){
             numberStack.push(arr[i])
+            if (i===arr.length-1){
+                range.push(`${numberStack[0]}_${numberStack[numberStack.length-1]}`)
+            }            
         }
         else {
             range.push(`${numberStack[0]}_${numberStack[numberStack.length-1]}`)            
@@ -81,7 +84,7 @@ function toRange (arr){
 // }
 console.log(toRange([1,2,3,4,5,6,9]))
 // console.log(toArray(toRange([1,2,3,4,5,6,9])))
-// console.log(toRange([1,2,3,4,5]))
+console.log(toRange([1,2,3,4,5]))
 // console.log(toArray(toRange([1,2,3,4,5])))
 
 
