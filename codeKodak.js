@@ -11,8 +11,6 @@
 // |    |
 // ******
 
-
-
 // Write a function to produce these digital frames. The function has two parameters, width and height.
 // If you complete this, please modify the function to allow customers to choose custom characters for their frame. 
 // They should be able to do this by way of a third parameter.
@@ -26,17 +24,11 @@ function codeKodak (width,height,custom){
     }
     let result = [];
     for (let i=1; i<=height+2;i++){
-      if (i===1){
-        result.push(top.repeat(width+2).concat('\n'));
-      }
-      else if (i===height+2){
-        result.push(top.repeat(width+2).concat('\n'));         
-      }
-      else {
-        result.push(side,' '.repeat(width),side,'\n');         
-      };
+      if (i===1){result.push(top.repeat(width+2).concat('\n'));}
+      else if (i===height+2){result.push(top.repeat(width+2).concat('\n'));}
+      else {result.push(side,' '.repeat(width),side,'\n');};
     };
     return result.join('');
-  };
+};
   
-  console.log(codeKodak(3,4,['$','!']));  
+console.log(codeKodak(3,4,['$','!']));  
