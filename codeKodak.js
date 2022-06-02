@@ -21,7 +21,7 @@ function codeKodak (width,height,custom){
     if (custom){
       top=custom[0];
       side=custom[1];
-    }
+    };
     let result = [];
     for (let i=1; i<=height+2;i++){
       if (i===1){result.push(top.repeat(width+2).concat('\n'));}

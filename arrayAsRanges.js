@@ -12,6 +12,8 @@ The numbers 5, 6, 7, 8 and 9 would be displayed as "5_9"
 The number 6 would just be "6"*/
 
 function toRange (arr){
+    if (arr===[]) return ''
+    else if (arr.length===1) return arr[0];
     let numberStack = []
     let range = [];
     for (let i=0; i<arr.length; i++){                
@@ -24,12 +26,19 @@ function toRange (arr){
                 range.push(`${numberStack[0]}_${numberStack[numberStack.length-1]}`)
             }            
         }
+        else if (arr[i-1]===undefined){
+            range.push(arr[i],',')
+        }
+        else if (arr[i+1]===undefined){
+            range.push(arr[i])
+        }
         else {
             range.push(`${numberStack[0]}_${numberStack[numberStack.length-1]}`)            
             numberStack.length = 0
             range.push(`,${arr[i]}`)            
         }        
     }
+    console.log(range)
     return range.join('')
 }
 
@@ -55,9 +64,11 @@ function toArray(str){
     return result    
 }
 console.log(toRange([1,2,3,4,5,6,9]))
-console.log(toArray(toRange([1,2,3,4,5,6,9])))
+// console.log(toArray(toRange([1,2,3,4,5,6,9])))
 console.log(toRange([1,2,3,4,5]))
-console.log(toArray(toRange([1,2,3,4,5])))
+
+console.log(toRange([1,3]))
+console.log(toRange([1]))
 
 
 
