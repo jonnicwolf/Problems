@@ -83,3 +83,10 @@ console.log(totalTime(['01:20','03:10']));    // --> '4 minutes, 30 seconds'
 // console.log(totalTime(['01:20:00','40:00'])); // --> '2 hours'
 // console.log(totalTime(['12:00:00','10:00:00','02:00:00'])); // --> '1 day'
 // console.log(totalTime(['24:00:00','24:00:00','07'])); // --> '2 days, 7 seconds
+
+
+//break into functions (5)
+//set up obj to contain times (days, hours, minutes, seconds)
+//given timeSigniture do i add to timeobj
+//when done calculating time and normalising  
+    //work on formating output string
