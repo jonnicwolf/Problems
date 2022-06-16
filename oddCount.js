@@ -16,4 +16,6 @@ function oddCount (n) {
 console.log(oddCount(7))
 console.log(oddCount(8))
 console.log(oddCount(15))
-console.log(oddCount(1981273947))
+console.log(oddCount(1_415_925_712_537_958))
+
+console.log(9_007_199_254_740_991-1_415_925_712_537_958)
