@@ -22,7 +22,7 @@ function triangular (n){
     //use n for the end of the loop
     //use a loop to keep the count
     
-    return n*(n+1)/2
+    return n>0 ? n*(n+1)/2 : 0
 };
 console.log(triangular(2))
 // console.log(triangular(3))
