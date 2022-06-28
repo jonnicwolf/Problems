@@ -26,6 +26,8 @@ function simpleStringCharacters (s){
     return Object.values(count)
 }
 
+//time complexity: O(n)
+
 console.log(simpleStringCharacters("Codewars@codewars123.com"))
 console.log(simpleStringCharacters("bgA5<1d-tOwUZTS8yQ"))
 console.log(simpleStringCharacters("P*K4%>mQUDaG$h=cx2?.Czt7!Zn16p@5H"))

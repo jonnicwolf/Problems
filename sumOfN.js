@@ -13,11 +13,7 @@ Examples
 -5  -->  [0, -1, -3, -6, -10, -15]
  7  -->  [0,  1,  3,  6,  10,  15,  21,  28] */
 
-function sumOfN (n){
-    //create a var in loop
-    //+= i to 1 
-    //push this number to an array
-    //join with +
+function sumOfN (n){    
     const result = []
     let sum = 0
     if (n<0){

@@ -9,7 +9,7 @@ function oddCount (n) {
     //if it has a remainder it is odd     
         //therefore we round down
     //if even
-        //do: quotient-1
+        //do: quotient
     return n%2>0 ? Math.floor(n/2) : (n/2)
 }
 
@@ -18,7 +18,3 @@ console.log(oddCount(8))
 console.log(oddCount(15))
 console.log(oddCount(1_415_925_712_537_958))
 console.log(oddCount(15023))
-console.log(1_415_925_712_537_958/2)
-console.log(oddCount)
-
-console.log(9_007_199_254_740_991-1_415_925_712_537_958)
