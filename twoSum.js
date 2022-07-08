@@ -5,12 +5,12 @@
 // You can return the answer in any order.
 
 function twoSum (nums, target){
-  const potentials = {}
-  for (let num of nums){
-    if (potentials[target-num]){
-      return [target-num,num]
+  const indexes = {}
+  for (let i=0; i<nums.length; i++){    
+    if (indexes[target-nums[i]]!==undefined){
+      return [indexes[target-nums[i]],i]
     }
-    potentials[num] = num
+    indexes[nums[i]] = i
   }
 }
 console.log(twoSum([2,7,11,15],9));

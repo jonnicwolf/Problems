@@ -19,17 +19,28 @@ function getTheVowels (word){
     //find all vowels and record their index
     //check if indexRecord  is in acending order
     const vowels = ['a','e','i','o','u']
+    const filteredVowels = []
     let count = 0
-    let vowelOrder_charcode = []
-    for (let i=0; i<word.length; i++){
-        if (vowels.indexOf(word[i])>0){
-            vowelOrder_charcode.push(word.charCodeAt(i))
+    
+    for (let i=0; i<word.length; i++) {
+        if (vowels.includes(word[i])>0){            
+            filteredVowels.push(word[i])
         }
     }
-    vowelOrder_charcode.map((val,idx,arr)=> {if(val<arr[idx+1]) {return count++}})
-    console.log(vowelOrder_charcode)
-    return count
+    //look for a        
+    let consecutiveVowels = []
+    console.log(filteredVowels)
+    for (let i=0; i<vowels.length; i++) {
+        let vowelInOrder = filteredVowels.indexOf(vowels[i])
+        consecutiveVowels.push(vowelInOrder)
+        filteredVowels.splice(vowelInOrder,vowelInOrder-filteredVowels.length)
+        console.log(filteredVowels)
+    }
+    console.log(consecutiveVowels)
+    
+    
 }
 
-console.log(getTheVowels("agrtertyfikfmroyrntbvsukldkfa"))
+// console.log(getTheVowels("agrtertyfikfmroyrntbvsukldkfa"))
+console.log(getTheVowels("erfaiekjudhyfimngukduo"))
 

@@ -10,5 +10,5 @@ Note: The output array should be sorted alphabetically.*/
 function convertHashToArray (hash){
     return Object.entries(hash).sort()
 }
-
+//time complexity: n(log(n))
 console.log(convertHashToArray({name: 'Jeremy', age: 24, role: 'Software Engineer'}))
