@@ -3,8 +3,6 @@
  * returns an array of the top-3 most occurring words, in descending order of the number of occurrences.
  */
 
-const { Filter, ContactsOutlined } = require("@material-ui/icons")
-
 function topThreeWords (text){
     //split into an array to remove whitespaces
     //filter for all text that do not ONLY contain a-z
@@ -42,9 +40,9 @@ function topThreeWords (text){
 }
 const test1 = "In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing. An olla of rather more beef than mutton, a salad on most nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra on Sundays, made away with three-quarters of his income."
 const test2 = "e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"
-const test3 = "  //wont won't won't"
+// const test3 = "  //wont won't won't"
 const test4 = "a a a  b  c c  d d d d  e e e e e"
-const test5 =  '  //wont won\'t won\'t'
+const test5 =  `  //wont won't won't`
 
 // console.log(topThreeWords(test1))
 // console.log(topThreeWords(test2))

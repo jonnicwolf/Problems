@@ -46,15 +46,55 @@
 
 
 
-[ '******' ]
-[ '******', '|', '    ', '|' ]
-[ '******', '|', '    ', '|', '|', '    ', '|' ]
-[
-  '******', '|','    ',   '|','|',      '    ','|',      '|','    ',   '|']
-[
-  '******', '|', '    ',
-  '|',      '|', '    ',
-  '|',      '|', '    ',
-  '|',      '|', '    ',
-  '|'
-]
+// [ '******' ]
+// [ '******', '|', '    ', '|' ]
+// [ '******', '|', '    ', '|', '|', '    ', '|' ]
+// [
+//   '******', '|','    ',   '|','|',      '    ','|',      '|','    ',   '|']
+// [
+//   '******', '|', '    ',
+//   '|',      '|', '    ',
+//   '|',      '|', '    ',
+//   '|',      '|', '    ',
+//   '|'
+// ]
+
+function firstNonRepeated(s){
+  //store the count in an object with letter keys ✅
+  let counter = {}
+  
+  //count the letters ✅
+  for (let i = 0; i < s.length; i++){
+    
+    //if the current letter of s exists as a key in counter
+    //increase it by 1
+    if (counter[s[i]]) {
+      counter[s[i]] += 1
+    } 
+    //if the current letter of s does NOT exist in counter
+    //make s[i] a key of counter *counter[s[i]]* equal to 1
+    else (counter[s[i]] = 1)    
+  } 
+  let newArr = Object.entries(counter)
+  
+  //sort ✅
+  newArr.sort((a,b) => a[1] - b[1])  
+  
+  //identify the letter/value with the count of 1 ✅
+  if (newArr[0][1] > 1) return null
+  else return newArr[0][0]
+}
+
+console.log(firstNonRepeated('test'))
+console.log(firstNonRepeated('kat'))
+console.log(firstNonRepeated('mississippi'))
+console.log(firstNonRepeated('aabbcc'))
+
+
+const alexis = {
+  eyes : 'green',
+  height: 62,
+  catchphrase: 'boc boc'
+}
+
+console.log(alexis.toebeans)
