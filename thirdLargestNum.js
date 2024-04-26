@@ -6,3 +6,8 @@ const thirdLargestNumber = (arrOfNums) => {
 }
 
 console.log(thirdLargestNumber([7,2,5,1,9,8,3]))
+
+
+const winter = 'Winter 2025'
+
+console.log(winter.split(' ').join(''))
