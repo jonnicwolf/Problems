@@ -35,4 +35,4 @@ const fizzBuzz = (n) => {
     return answer;
 }
 
-console.log(fizzBuzz(15))
+console.log(fizzBuzz(3))

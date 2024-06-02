@@ -1,29 +1,12 @@
-const longestCommonPrefix = strs => {
-    const neuArr = []
-    const output = {}
-    strs.forEach(str => {
-        neuArr.push([...str])
-        console.log(str)
-    })
-    
-    const neuNeu = neuArr.flat().sort()
-    console.log(neuNeu)
-    for (let i = 0, len = neuNeu.length; i < len; i++) {
-        output[neuNeu[i]] = (strs.split(neuNeu)).length - 1;
-        console.log(output)
-    }
-    
-    
-    
-    
-    return neuArr
-}
-console.log(longestCommonPrefix(["flower", "flow", "flight"]))
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+  if (strs.length === 0) return "";
+  if (strs.length === 1) return strs[0];
+  
+};
 
-// neuArr.forEach((str) => {
-    //     if (Array.isArray(str)) {
-    //         str.forEach((string) => {
-    //             [...string].sort((a, b) => {a-b})
-    //         })
-    //     }
-    // })
+console.log(longestCommonPrefix(["flower","flow","flight"]))
+// console.log(longestCommonPrefix(["dog","racecar","car"]))
