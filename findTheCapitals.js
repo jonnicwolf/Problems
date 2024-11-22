@@ -8,4 +8,4 @@ const findTheCapitals = (capitals) => {
 
 console.log(
   findTheCapitals([{state: 'Maine', capital: 'Augusta'}])
-)
+);
