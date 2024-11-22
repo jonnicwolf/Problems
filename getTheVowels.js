@@ -13,34 +13,37 @@ Note
 For this kata, the vowels are 'a', 'e', 'i', 'o', 'u', in that order. y is not considered a vowel in this kata.
  */
 
-function getTheVowels (word){
-    //create a list of vowels
-    //loop over string
-    //find all vowels and record their index
-    //check if indexRecord  is in acending order
-    const vowels = ['a','e','i','o','u']
-    const filteredVowels = []
-    let count = 0
-    
-    for (let i=0; i<word.length; i++) {
-        if (vowels.includes(word[i])>0){            
-            filteredVowels.push(word[i])
+function getTheVowels (word) {
+    const vowels = 'aeiou';
+    let start = null; //first appearance of first valid vowel in word
+    let origin = null; //the index of which vowel is found first in word
+    let pointer = null; // points at first valid vowel
+    let count = 0; //count valid conseq vowel
+    let i = 0;
+
+    if (!word.includes('a')) return 0;
+
+    do {
+        if (word.includes(vowels[i])) {
+            origin = i;
+            start = word.indexOf(vowels[i]);
+            pointer = origin;
+            break;
+        };
+        i++;
+    } while (start === null);
+
+    for (let i=start; i<word.length; i++) {
+        if (word[i] === vowels[pointer]) {
+            count++;
+            pointer++;
+            if (pointer >= 5) pointer = origin;
         }
     }
-    //look for a        
-    let consecutiveVowels = []
-    console.log(filteredVowels)
-    for (let i=0; i<vowels.length; i++) {
-        let vowelInOrder = filteredVowels.indexOf(vowels[i])
-        consecutiveVowels.push(vowelInOrder)
-        filteredVowels.splice(vowelInOrder,vowelInOrder-filteredVowels.length)
-        console.log(filteredVowels)
-    }
-    console.log(consecutiveVowels)
-    
-    
+    return count;
 }
 
-// console.log(getTheVowels("agrtertyfikfmroyrntbvsukldkfa"))
-console.log(getTheVowels("erfaiekjudhyfimngukduo"))
-
+console.log(
+    getTheVowels('akfheujfkgiaaaofmmfkdfuaiiie'),
+    getTheVowels('eiknfhjrytueiouesxdczbeuiuoimnmfhfiuou'),
+)

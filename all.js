@@ -11,7 +11,7 @@ all((1, 2, 3, 4, 5), less_than_9)    -> True
 
 */
 
-function all(arr, fun){
-    return arr.every(fun)
-}
+// function all(arr, fun){
+//     return arr.every(fun)
+// }
 
