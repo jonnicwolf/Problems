@@ -44,14 +44,15 @@
 
 // ~~~
 
-function personalise( campaign, person) {
+function personalise( campaign, person ) {
   return campaign
     .replace(/<NAME>/g, person.name)
     .replace(/<CITY>/g, person.city)
     .replace(/<FAVOURITE PRODUCTS>/g, person.favourite_products);
-}
+};
 
 console.log(personalise(
   "Hello <NAME>, how is the weather in <CITY> today? We wanted to let you know that <FAVOURITE PRODUCTS> are on sale today only!",
-  { name : "Sally", city : "Glasgow", favourite_products : "toasters"}
-))
+  { name : "Sally", city : "Glasgow", favourite_products : "toasters" }
+));
+
