@@ -4,23 +4,13 @@
  * depending on the language. */
 
 function normIndex (arr,index) {
-    if (index<0) {
-        for (let i=index; i>0; i--){
-            if (i===0) i=index;    
-            if (i===index) return arr[index];
-        }
-    }
-    else{
-        for (let i=0; i<index; i++){
-            console.log(i)
-            if (i===arr.length) i=0;
-            if (i===index) return arr[index];
-        }
-    }    
-}
+    if (arr.length === 0) return undefined; // Handle empty arrays
+    const normalizedIndex = ((index % arr.length) + arr.length) % arr.length; // Wrap negative indices
+    return arr[normalizedIndex];
+};
 var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // console.log(normIndex(array, Math.round(Math.random() * 40 + 10)));
 // console.log(normIndex(array, Math.round(Math.random() * -40 - 10)));
-const test = [1,2,3,4,5]
-console.log(normIndex(array,1))
+const test = [1,2,3,4,5];
+console.log(normIndex(array,-23))
